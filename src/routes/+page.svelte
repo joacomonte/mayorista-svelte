@@ -22,6 +22,9 @@
 </main>
 
 <style>
+  main {
+    padding-top: 2rem;
+  }
 	.cards-container {
 		display: flex;
     flex-wrap: wrap;

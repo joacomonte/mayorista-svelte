@@ -9,25 +9,27 @@
 </script>
 
 <article class="card-container">
-	<!-- TITLE -->
-	{#if data[0]?.[0]}
-		<h1 class="mx-auto w-full py-2 text-center text-2xl font-medium">{data[0][0]}</h1>
-	{/if}
 
+  
 	<!-- IMAGE -->
 	<section class="card-image-container">
-		{#if images.length > 1}
-			<Splide options={{ rewind: true, arrows: false }} aria-label="Svelte Splide Example">
-				{#each images as url}
-					<SplideSlide>
-						<img src={url} alt="" />
-					</SplideSlide>
-				{/each}
-			</Splide>
+    {#if images.length > 1}
+    <Splide options={{ rewind: true, arrows: false }} aria-label="Svelte Splide Example">
+      {#each images as url}
+      <SplideSlide>
+        <img src={url} alt="" />
+      </SplideSlide>
+      {/each}
+    </Splide>
 		{:else}
-			<img src={images[0] ?? ''} alt="" />
+    <img src={images[0] ?? ''} alt="" />
 		{/if}
 	</section>
+  
+  	<!-- TITLE -->
+  {#if data[0]?.[0]}
+    <h1 class="mx-auto w-full py-2 text-center text-2xl font-medium">{data[0][0]}</h1>
+  {/if}
 
 	<div class="p-4">
 		<!-- SUBTITLE -->
@@ -119,5 +121,7 @@
 		position: relative;
 		height: fit-content;
 		width: 100%;
+    border-radius: 1.5rem;
+    overflow: hidden;
 	}
 </style>
