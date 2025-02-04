@@ -1,3 +1,5 @@
+export const prerender = true; //this makes the page.svelte html server rendered
+
 export const config = {
   isr: {
     expiration: 60,
