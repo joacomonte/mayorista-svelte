@@ -48,15 +48,17 @@
 			{/if}
 		</section>
 
-		<section class="[&>p]:inline-block">
-			{#if data[2]?.[0]}
-				<p>{data[2][0]}</p>
-			{/if}
-			{#if data[2]?.[1]}
-				<p>{data[2][1]}</p>
-			{/if}
+		<section>
+			<div class="[&>p]:inline-block">
+				{#if data[2]?.[0]}
+					<p>{data[2][0]}</p>
+				{/if}
+				{#if data[2]?.[1]}
+					<p>{data[2][1]}</p>
+				{/if}
+			</div>
 
-			<div>
+			<div class="[&>p]:inline-block">
 				{#if data[3]?.[0]}
 					<p>{data[3][0]}</p>
 				{/if}
@@ -65,7 +67,7 @@
 				{/if}
 			</div>
 
-			<div>
+			<div class="[&>p]:inline-block">
 				{#if data[4]?.[0]}
 					<p>{data[4][0]}</p>
 				{/if}
@@ -74,7 +76,7 @@
 				{/if}
 			</div>
 
-			<div>
+			<div class="[&>p]:inline-block">
 				{#if data[5]?.[0]}
 					<p>{data[5][0]}</p>
 				{/if}
