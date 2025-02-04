@@ -108,6 +108,7 @@
 
 <style>
 	.card-container {
+    color: rgb(39, 39, 39);
 		margin: auto;
 		width: 100%;
 		max-width: 475px;
