@@ -1,4 +1,4 @@
-export const prerender = true; //this makes the page.svelte html server rendered
+// export const prerender = true;
 
 export const config = {
   isr: {
