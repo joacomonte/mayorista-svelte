@@ -17,6 +17,18 @@ export function splitImagesURL(urlString: string) {
 	return urlString.split(',').map((url) => url.trim());
 }
 
+export function scrollIntoView(id: any) {
+  const element = document.getElementById(id);
+  if (element) {
+    const offset = 80;
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+      top: elementPosition - offset,
+      behavior: 'smooth'
+    });
+  }
+}
+
 
 interface MenuItem {cardNumber: number; bgcolor: string; title: string;}
 

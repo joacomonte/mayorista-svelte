@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { splitImagesURL } from '$lib/aux';
 	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
-	// import '@splidejs/svelte-splide/css';
 	import '@splidejs/svelte-splide/css/core';
 
 	let { data, index } = $props();
 
-	const images = $derived(splitImagesURL(data[11]?.[0] ?? ''));
+	let images = splitImagesURL(data?.[11]?.[0] ?? '');
+
 </script>
 
 <article class="card-container" id="{index}">

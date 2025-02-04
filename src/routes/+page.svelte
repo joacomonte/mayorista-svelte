@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { generateChunks, menuItems } from '$lib/aux';
+	import { generateChunks, menuItems, scrollIntoView } from '$lib/aux';
 	import type { PageProps } from './$types';
-	import Card from './Card.svelte';
+	import Card from '../components/Card.svelte';
+	import BrandSlider from '../components/BrandSlider/BrandSlider.svelte';
 
 	let { data }: PageProps = $props();
 
@@ -9,17 +10,6 @@
 
 	let chunks = generateChunks(values);
 
-	function scrollIntoView(id: any) {
-		const element = document.getElementById(id);
-		if (element) {
-			const offset = 80;
-			const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-			window.scrollTo({
-				top: elementPosition - offset,
-				behavior: 'smooth'
-			});
-		}
-	}
 </script>
 
 <main>
@@ -36,7 +26,7 @@
 		</div>
 	</div>
 
-	<div class="flex flex-col pt-16">
+	<div class="flex flex-col">
 		{#each menuItems as { cardNumber, bgcolor, title }}
 			<button
 				class="menuTile"
@@ -55,11 +45,20 @@
 		<img class=" w-32 h-32" src={`/si.png`} alt="fundacion si" />
 	</section>
 
+  <div class="py-4">
+    <BrandSlider/>
+  </div>
+
+
 	<div class="cards-container">
 		{#each chunks as chunk, index}
 			<Card data={chunk} {index} />
 		{/each}
 	</div>
+
+
+
+
 </main>
 
 <style>
