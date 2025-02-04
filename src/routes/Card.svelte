@@ -4,12 +4,12 @@
 	// import '@splidejs/svelte-splide/css';
 	import '@splidejs/svelte-splide/css/core';
 
-	let { data } = $props();
+	let { data, index } = $props();
 
 	const images = $derived(splitImagesURL(data[11]?.[0] ?? ''));
 </script>
 
-<article class="card-container">
+<article class="card-container" id="{index}">
 	<!-- IMAGE -->
 	<section class="card-image-container">
 		{#if images.length > 1}
