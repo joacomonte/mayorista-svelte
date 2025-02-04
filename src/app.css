@@ -1,3 +1,45 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+@media (max-width: 500px) {
+  p {
+    font-size: 0.85rem;
+  }
+}
+
+.navBar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0,0,0,0.1) 0%, rgba(255,255,255,0.1) 50%, rgba(0,0,0,0.1) 100%);
+  background-color: #252525;
+  z-index: 200;
+  flex: 1;
+  padding: 0 10px;
+}
+
+.navBar__Button {
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 30px; /* Change this value to position the div on the left side */
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+
+.navBar__tortuLogoContainer {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -10px;
+}

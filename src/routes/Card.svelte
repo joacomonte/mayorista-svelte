@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { splitImagesURL } from '$lib/aux';
 	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
-	import '@splidejs/svelte-splide/css';
+	// import '@splidejs/svelte-splide/css';
+	import '@splidejs/svelte-splide/css/core';
 
 	let { data } = $props();
 
@@ -9,27 +10,35 @@
 </script>
 
 <article class="card-container">
-
-  
 	<!-- IMAGE -->
 	<section class="card-image-container">
-    {#if images.length > 1}
-    <Splide options={{ rewind: true, arrows: false }} aria-label="Svelte Splide Example">
-      {#each images as url}
-      <SplideSlide>
-        <img src={url} alt="" />
-      </SplideSlide>
-      {/each}
-    </Splide>
+		{#if images.length > 1}
+			<Splide
+				options={{
+					rewind: true,
+					arrows: false,
+					focus: 'center',
+					perMove: 1,
+					perPage: 1,
+					autoHeight: true
+				}}
+				aria-label="Svelte Splide Example"
+			>
+				{#each images as url}
+					<SplideSlide>
+						<img src={url} alt="" />
+					</SplideSlide>
+				{/each}
+			</Splide>
 		{:else}
-    <img src={images[0] ?? ''} alt="" />
+			<img src={images[0] ?? ''} alt="" />
 		{/if}
 	</section>
-  
-  	<!-- TITLE -->
-  {#if data[0]?.[0]}
-    <h1 class="mx-auto w-full py-2 text-center text-2xl font-medium">{data[0][0]}</h1>
-  {/if}
+
+	<!-- TITLE -->
+	{#if data[0]?.[0]}
+		<h1 class="mx-auto w-full py-2 text-center text-2xl font-medium">{data[0][0]}</h1>
+	{/if}
 
 	<div class="p-4">
 		<!-- SUBTITLE -->
@@ -39,20 +48,20 @@
 			{/if}
 		</section>
 
-		<section>
+		<section class="[&>p]:inline-block">
 			{#if data[2]?.[0]}
-				<p class=" inline-block">{data[2][0]}</p>
+				<p>{data[2][0]}</p>
 			{/if}
 			{#if data[2]?.[1]}
-				<p class=" inline-block">{data[2][1]}</p>
+				<p>{data[2][1]}</p>
 			{/if}
 
 			<div>
 				{#if data[3]?.[0]}
-					<p class=" inline-block">{data[3][0]}</p>
+					<p>{data[3][0]}</p>
 				{/if}
 				{#if data[3]?.[1]}
-					<p class=" inline-block">{data[3][1]}</p>
+					<p>{data[3][1]}</p>
 				{/if}
 			</div>
 
@@ -100,7 +109,7 @@
 		margin: auto;
 		width: 100%;
 		max-width: 475px;
-		background-color: rgb(238, 238, 238);
+		background-color: rgb(231, 231, 231);
 		border-radius: 1.5rem;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 	}
@@ -113,15 +122,23 @@
 	@media (min-width: 1014px) {
 		.card-container {
 			width: 95vw;
-      height: 725px;
+			height: 725px;
 		}
 	}
 
 	.card-image-container {
 		position: relative;
-		height: fit-content;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
-    border-radius: 1.5rem;
-    overflow: hidden;
+		border-radius: 1.5rem;
+		overflow: hidden;
+
+		& img {
+			width: 100%;
+			object-fit: cover;
+			max-height: 400px;
+		}
 	}
 </style>
