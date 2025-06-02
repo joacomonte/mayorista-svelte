@@ -33,12 +33,12 @@ export function scrollIntoView(id: any) {
 interface MenuItem {cardNumber: number; bgcolor: string; title: string;}
 
 export let menuItems: MenuItem[] = [
-  { cardNumber: 0, bgcolor: '#F2C819', title: 'Sorbetes de colores - Alumino anodizado' },
-  { cardNumber: 1, bgcolor: '#FF8734', title: 'Sorbetes de acero inoxidable' },
-  { cardNumber: 3, bgcolor: '#E74741', title: 'Bombillas de mate' },
-  { cardNumber: 4, bgcolor: '#ED12ED', title: 'Mates' },
+  { cardNumber: 0, bgcolor: '##2A442', title: 'Sorbetes de colores - Alumino anodizado' },
+  { cardNumber: 1, bgcolor: '#F2C819', title: 'Sorbetes de acero inoxidable' },
+  { cardNumber: 3, bgcolor: '#FF8734', title: 'Bombillas de mate' },
+  { cardNumber: 4, bgcolor: '#E74741', title: 'Mates' },
   { cardNumber: 6, bgcolor: '#FF8AC5', title: 'Botellas y Vasos' },
-  { cardNumber: 7, bgcolor: '#1A4BB2', title: 'Estuche y Limpiador' },
+  { cardNumber: 7, bgcolor: '#ED12ED', title: 'Estuche y Limpiador' },
   { cardNumber: 8, bgcolor: '#0AB8F8', title: 'Exhibidores' },
   { cardNumber: 9, bgcolor: '#85BD6B', title: 'Personalizados' }
 ];
