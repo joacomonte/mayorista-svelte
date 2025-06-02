@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { generateChunks, menuItems, scrollIntoView } from '$lib/aux';
-	import BrandSlider from '../components/BrandSlider/BrandSlider.svelte';
-	import Card from '../components/Card.svelte';
+	import BrandSlider from '../../components/BrandSlider/BrandSlider.svelte';
+	import Card from '../../components/Card.svelte';
 	import type { PageProps } from './$types';
 
 

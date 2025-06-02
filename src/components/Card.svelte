@@ -8,6 +8,8 @@
 
 	let images = splitImagesURL(data?.[11]?.[0] ?? '');
 
+  import { page } from '$app/state';
+
 </script>
 
 <article class="card-container" id="{index}">
@@ -55,7 +57,7 @@
 				{#if data[2]?.[0]}
 					<p>{data[2][0]}</p>
 				{/if}
-				{#if data[2]?.[1]}
+				{#if data[2]?.[1]  && page.url.pathname === '/prices' }
 					<p>{data[2][1]}</p>
 				{/if}
 			</div>
@@ -64,7 +66,7 @@
 				{#if data[3]?.[0]}
 					<p>{data[3][0]}</p>
 				{/if}
-				{#if data[3]?.[1]}
+				{#if data[3]?.[1]  && page.url.pathname === '/prices' }
 					<p>{data[3][1]}</p>
 				{/if}
 			</div>
@@ -73,17 +75,17 @@
 				{#if data[4]?.[0]}
 					<p>{data[4][0]}</p>
 				{/if}
-				{#if data[4]?.[1]}
+				{#if data[4]?.[1]  && page.url.pathname === '/prices' }
 					<p>{data[4][1]}</p>
 				{/if}
 			</div>
 
 			<div class="[&>p]:inline-block">
 				{#if data[5]?.[0]}
-					<p>{data[5][0]}</p>
+					<p>{data[5][0] }</p>
 				{/if}
-				{#if data[5]?.[1]}
-					<p>{data[5][1]}</p>
+				{#if data[5]?.[1] }  
+					<p>{data[5][1]  && page.url.pathname === '/prices' }</p>
 				{/if}
 			</div>
 		</section>
