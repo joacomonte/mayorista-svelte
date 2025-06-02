@@ -13,7 +13,8 @@
 		new Splide('.splide', {
 			perPage: 3,
 			rewind: true,
-			arrows: false
+			arrows: false,
+      pagination: false,
 		}).mount({ AutoScroll });
 		return () => splide.destroy();
 	});

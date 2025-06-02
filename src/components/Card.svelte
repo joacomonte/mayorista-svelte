@@ -2,6 +2,7 @@
 	import { splitImagesURL } from '$lib/aux';
 	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
 	import '@splidejs/svelte-splide/css/core';
+  import '@splidejs/splide/dist/css/splide.min.css';
 
 	let { data, index } = $props();
 
@@ -20,7 +21,8 @@
 					focus: 'center',
 					perMove: 1,
 					perPage: 1,
-					autoHeight: true
+					autoHeight: true,
+          pagination: true,
 				}}
 				aria-label="Svelte Splide Example"
 			>
@@ -144,4 +146,19 @@
 			max-height: 400px;
 		}
 	}
+  
+  :global(.splide__pagination__page) {
+    background: #1e1e1e; /* Gray for inactive dots */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background 0.3s ease;
+  }
+
+  :global(.splide__pagination__page.is-active) {
+    background: #0149ff; /* Blue for active dot */
+    transform: scale(1.2);
+  }
+  
 </style>
