@@ -7,16 +7,19 @@
 		import.meta.glob<{ default: string }>('./logos/*.png', { eager: true })
 	).map((img: { default: string }) => img.default);
 
-	let splide: any;
+	let splide: Splide | null = null;
 
 	onMount(() => {
-		new Splide('.splide', {
+		splide = new Splide('.splide', {
 			perPage: 3,
 			rewind: true,
 			arrows: false,
-      pagination: false,
+			pagination: false,
 		}).mount({ AutoScroll });
-		return () => splide.destroy();
+
+		return () => {
+			splide?.destroy();
+		};
 	});
 </script>
 

@@ -2,10 +2,10 @@
 	import { generateChunks, menuItems, scrollIntoView } from '$lib/aux';
 	import BrandSlider from '../components/BrandSlider/BrandSlider.svelte';
 	import Card from '../components/Card.svelte';
-	import type { PageProps } from './$types';
+  import type { PageData } from './$types';
+  import { goto } from '$app/navigation';
 
-
-	let { data }: PageProps = $props();
+  export let data: PageData;
 
 	let values: any = data.data;
 
@@ -15,7 +15,7 @@
 
 <main>
 	<div class="navBar">
-		<a href="/contact"> Contacto </a>
+		<button onclick={() => goto('/contact')}>Contacto</button>
 		<div class="navBar__tortuLogoContainer">
 			<button
 				type="button"
