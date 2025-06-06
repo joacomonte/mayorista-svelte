@@ -33,12 +33,11 @@ export function scrollIntoView(id: any) {
 interface MenuItem {cardNumber: number; bgcolor: string; title: string;}
 
 export let menuItems: MenuItem[] = [
-  { cardNumber: 0, bgcolor: '##2A442', title: 'Sorbetes de colores - Alumino anodizado' },
-  { cardNumber: 1, bgcolor: '#F2C819', title: 'Sorbetes de acero inoxidable' },
-  { cardNumber: 3, bgcolor: '#FF8734', title: 'Bombillas de mate' },
-  { cardNumber: 4, bgcolor: '#E74741', title: 'Mates' },
-  { cardNumber: 6, bgcolor: '#FF8AC5', title: 'Botellas y Vasos' },
-  { cardNumber: 7, bgcolor: '#ED12ED', title: 'Estuche y Limpiador' },
-  { cardNumber: 8, bgcolor: '#0AB8F8', title: 'Exhibidores' },
-  { cardNumber: 9, bgcolor: '#85BD6B', title: 'Personalizados' }
+  { cardNumber: 0, bgcolor: '#F2C819', title: 'Sorbetes Reutilizables' },
+  { cardNumber: 4, bgcolor: '#FF8734', title: 'Bombillas de mate' },
+  { cardNumber: 6, bgcolor: '#E74741', title: 'Mates' },
+  { cardNumber: 9, bgcolor: '#FF8AC5', title: 'Botellas y Vasos' },
+  { cardNumber: 13, bgcolor: '#ED12ED', title: 'Estuche y Limpiador' },
+  { cardNumber: 15, bgcolor: '#0AB8F8', title: 'Exhibidores' },
+  { cardNumber: 18, bgcolor: '#85BD6B', title: 'Personalizados' }
 ];
