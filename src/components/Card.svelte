@@ -12,7 +12,7 @@
 
 </script>
 
-<article class="card-container" id="{index}">
+<article class="card-container" id="{index}" style:height={page.url.pathname === '/prices' ? '725px': '570px'}>
 	<!-- IMAGE -->
 	<section class="card-image-container">
 		{#if images.length > 1}
@@ -57,20 +57,23 @@
 				{#if data[2]?.[0]}
 					<p>{data[2][0]}</p>
 				{/if}
-				{#if data[2]?.[1]  && page.url.pathname === '/prices' }
+				{#if data[2]?.[1] }
 					<p>{data[2][1]}</p>
 				{/if}
 			</div>
 
+      {#if data[3]?.[1]  && page.url.pathname === '/prices' }
 			<div class="[&>p]:inline-block">
 				{#if data[3]?.[0]}
 					<p>{data[3][0]}</p>
 				{/if}
-				{#if data[3]?.[1]  && page.url.pathname === '/prices' }
+				{#if data[3]?.[1] }
 					<p>{data[3][1]}</p>
 				{/if}
 			</div>
+      {/if}
 
+      {#if data[3]?.[1]  && page.url.pathname === '/prices' }
 			<div class="[&>p]:inline-block">
 				{#if data[4]?.[0]}
 					<p>{data[4][0]}</p>
@@ -79,7 +82,9 @@
 					<p>{data[4][1]}</p>
 				{/if}
 			</div>
+      {/if}
 
+      {#if data[3]?.[1]  && page.url.pathname === '/prices' }
 			<div class="[&>p]:inline-block">
 				{#if data[5]?.[0]}
 					<p>{data[5][0] }</p>
@@ -88,8 +93,10 @@
 					<p>{data[5][1]  && page.url.pathname === '/prices' }</p>
 				{/if}
 			</div>
+      {/if}
 		</section>
 
+    {#if data[3]?.[1]  && page.url.pathname === '/prices' }
 		<section class="mt-4">
 			{#if data[6]?.[0]}
 				<p class="font-bold">{data[6][0]}</p>
@@ -107,6 +114,7 @@
 				<p>{data[10][0]}</p>
 			{/if}
 		</section>
+    {/if}
 	</div>
 </article>
 
