@@ -27,7 +27,7 @@
 		</div>
 	</div>
 
-	<div class="flex flex-col">
+	<div class="flex flex-col pt-16">
 		{#each menuItems as { cardNumber, bgcolor, title }}
 			<button
 				class="menuTile"
