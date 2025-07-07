@@ -89,8 +89,8 @@
 				{#if data[5]?.[0]}
 					<p>{data[5][0] }</p>
 				{/if}
-				{#if data[5]?.[1] }  
-					<p>{data[5][1]  && page.url.pathname === '/prices' }</p>
+				{#if data[5]?.[1] && page.url.pathname === '/prices' }  
+					<p>{data[5][1]}</p>
 				{/if}
 			</div>
       {/if}
