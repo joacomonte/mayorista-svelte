@@ -62,7 +62,7 @@
 				{/if}
 			</div>
 
-      {#if data[3]?.[1]  && page.url.pathname === '/prices' }
+      {#if data[3]?.[0]  && page.url.pathname === '/prices' }
 			<div class="[&>p]:inline-block">
 				{#if data[3]?.[0]}
 					<p>{data[3][0]}</p>
@@ -73,7 +73,7 @@
 			</div>
       {/if}
 
-      {#if data[3]?.[1]  && page.url.pathname === '/prices' }
+      {#if data[3]?.[0] && page.url.pathname === '/prices' }
 			<div class="[&>p]:inline-block">
 				{#if data[4]?.[0]}
 					<p>{data[4][0]}</p>
@@ -84,7 +84,7 @@
 			</div>
       {/if}
 
-      {#if data[3]?.[1]  && page.url.pathname === '/prices' }
+      {#if data[3]?.[0]  && page.url.pathname === '/prices' }
 			<div class="[&>p]:inline-block">
 				{#if data[5]?.[0]}
 					<p>{data[5][0] }</p>
@@ -96,7 +96,7 @@
       {/if}
 		</section>
 
-    {#if data[3]?.[1]  && page.url.pathname === '/prices' }
+    {#if data[3]?.[0] && page.url.pathname === '/prices' }
 		<section class="mt-4">
 			{#if data[6]?.[0]}
 				<p class="font-bold">{data[6][0]}</p>
