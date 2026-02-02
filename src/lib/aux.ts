@@ -38,7 +38,7 @@ export let menuItems: MenuItem[] = [
   { cardNumber: 4, bgcolor: '#FF8734', title: 'Bombillas de mate' },
   { cardNumber: 6, bgcolor: '#E74741', title: 'Mates' },
   { cardNumber: 9, bgcolor: '#FF8AC5', title: 'Botellas y Vasos' },
-  { cardNumber: 13, bgcolor: '#ED12ED', title: 'Estuche y Limpiador' },
+  { cardNumber: 13, bgcolor: '#ED12ED', title: 'Accesorios' },
   { cardNumber: 15, bgcolor: '#0AB8F8', title: 'Exhibidores' },
   { cardNumber: 18, bgcolor: '#85BD6B', title: 'Personalizados' }
 ];
