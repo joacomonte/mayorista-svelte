@@ -18,10 +18,9 @@ export function splitImagesURL(urlString: string) {
 	return urlString.split(',').map((url) => url.trim());
 }
 
-export function scrollIntoView(id: any) {
+export function scrollIntoView(id: any, offset = 80) {
   const element = document.getElementById(id);
   if (element) {
-    const offset = 80;
     const elementPosition = element.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({
       top: elementPosition - offset,
@@ -36,9 +35,9 @@ interface MenuItem {cardNumber: number; bgcolor: string; title: string;}
 export let menuItems: MenuItem[] = [
   { cardNumber: 0, bgcolor: '#F2C819', title: 'Sorbetes Reutilizables' },
   { cardNumber: 4, bgcolor: '#FF8734', title: 'Bombillas de mate' },
-  { cardNumber: 6, bgcolor: '#E74741', title: 'Mates' },
-  { cardNumber: 9, bgcolor: '#FF8AC5', title: 'Botellas y Vasos' },
-  { cardNumber: 13, bgcolor: '#ED12ED', title: 'Accesorios' },
+  { cardNumber: 7, bgcolor: '#E74741', title: 'Mates' },
+  { cardNumber: 10, bgcolor: '#FF8AC5', title: 'Botellas y Vasos' },
+  { cardNumber: 14, bgcolor: '#ED12ED', title: 'Accesorios' },
   { cardNumber: 15, bgcolor: '#0AB8F8', title: 'Exhibidores' },
   { cardNumber: 18, bgcolor: '#85BD6B', title: 'Personalizados' }
 ];

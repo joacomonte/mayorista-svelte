@@ -1,19 +1,17 @@
 <script lang="ts">
 	import { generateChunks, menuItems, scrollIntoView } from '$lib/aux';
 	import BrandSlider from '../../components/BrandSlider/BrandSlider.svelte';
-	import Card from '../../components/Card.svelte';
+	import Catalog from '../../components/Catalog.svelte';
 	import type { PageProps } from './$types';
-
 
 	let { data }: PageProps = $props();
 
 	let values: any = data.data;
 
 	let chunks = generateChunks(values);
-
 </script>
 
-<main>
+<main class="pb-10">
 	<div class="navBar">
 		<a href="/contact"> Contacto </a>
 		<div class="navBar__tortuLogoContainer">
@@ -28,55 +26,26 @@
 	</div>
 
 	<div class="flex flex-col pt-16">
-		{#each menuItems as { cardNumber, bgcolor, title }}
+		{#each menuItems as { bgcolor, title }, i}
 			<button
 				class="menuTile"
 				style="background-color: {bgcolor};"
-				onclick={() => scrollIntoView(cardNumber)}>{title}</button
+				onclick={() => scrollIntoView(`section-${i}`)}>{title}</button
 			>
 		{/each}
 	</div>
 
-	<section class="flex flex-col justify-center items-center gap-4 my-10">
-		<p class=" text-pretty text-center px-10 max-w-[800px]">
-			Con tu compra colaboras con el programa de Residencias Universitarias de Fundación Sí.<br/>
-			Porque el verdadero cambio está en la educación y por eso decidimos donarles cada mes el 1% de
-			todas nuestras ventas.
+	<section class="flex flex-col items-center justify-center gap-3 px-6 pt-6 pb-4 text-center">
+		<p class="max-w-[600px] text-pretty text-sm text-neutral-300">
+			Con tu compra colaboras con el programa de Residencias Universitarias de Fundación Sí:
+			donamos cada mes el 1% de todas nuestras ventas.
 		</p>
-		<img class=" w-32 h-32" src={`/si.png`} alt="fundacion si" />
+		<img class="h-16 w-16" src={`/si.png`} alt="fundacion si" />
 	</section>
 
-  <div class="py-4">
-    <BrandSlider/>
-  </div>
-
-
-	<div class="cards-container">
-		{#each chunks as chunk, index}
-			<Card data={chunk} {index} />
-		{/each}
+	<div class="pb-4">
+		<BrandSlider />
 	</div>
 
-
-
-
+	<Catalog {chunks} showPrices={true} />
 </main>
-
-<style>
-	.cards-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-		gap: 2rem;
-		column-gap: 3rem;
-		width: 100%;
-		margin: auto;
-	}
-
-	@media (min-width: 1014px) {
-		.cards-container {
-			justify-content: space-around;
-		}
-	}
-</style>
